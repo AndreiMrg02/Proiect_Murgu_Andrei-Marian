@@ -17,22 +17,22 @@ public class DiagramaKV implements Serializable {
     private int n_Bits;
     private int state = 0;
     private TruthTable table =  TruthTable.getInstance();
-    private static DiagramaKV dbObject;
+//    private static DiagramaKV dbObject;
    
     
-    public static DiagramaKV getInstance() {
-
-    	 Logger logger = Logger.getLogger(DiagramaKV.class.getName());
-    	    Supplier<String> StrSupplier= () -> new String("S-a accesat instanta DiagramaKV!");
-	      if(dbObject == null) {
-	    	  logger.log(Level.INFO,
-	                   StrSupplier);
-	         dbObject = new DiagramaKV();
-	      }
-
-	       // returns the singleton object
-	       return dbObject;
-	   }
+//    public static DiagramaKV getInstance() {
+//
+//    	 Logger logger = Logger.getLogger(DiagramaKV.class.getName());
+//    	    Supplier<String> StrSupplier= () -> new String("S-a accesat instanta DiagramaKV!");
+//	      if(dbObject == null) {
+//	    	  logger.log(Level.INFO,
+//	                   StrSupplier);
+//	         dbObject = new DiagramaKV();
+//	      }
+//
+//	       // returns the singleton object
+//	       return dbObject;
+//	   }
     public DiagramaKV() {
         super();
         this.setN_Bits(0);
