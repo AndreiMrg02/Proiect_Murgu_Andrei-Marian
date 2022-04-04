@@ -5,13 +5,14 @@ import java.util.Vector;
 public class Mintermen implements Calcul {
 	
 	private int value;
+	private Integer dontcare;
 	private static int n_bits;
 	private boolean checked;
 	private Vector<Boolean> bits =  new Vector<Boolean>(5);
 	private Vector<Boolean> dont_care =  new Vector<Boolean>(5);
 	private String sum_of_prod;
-	
-	Mintermen()
+	         
+	public Mintermen()
 	{
 		value = 0;
 		n_bits = 0;
@@ -21,6 +22,6 @@ public class Mintermen implements Calcul {
 		sum_of_prod = "";
 	}
 	public void functie_calcul() {
-		
+		System.out.println("FUNCTIE DIN Mintermen");
 	}
 }

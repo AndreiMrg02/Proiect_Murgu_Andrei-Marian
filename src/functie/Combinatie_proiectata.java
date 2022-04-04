@@ -1,17 +1,17 @@
 package functie;
 import java.util.Vector;
 
-public class Combinate_proiectata implements Calcul {
+public class Combinatie_proiectata implements Calcul {
 	
 	
 	private int value;
 	private static int n_bits;
 	private boolean checked;
-	private Vector<Boolean> bits =  new Vector<Boolean>(5);
+	private Vector<Integer> bits =  new Vector<Integer>(5);
 	private Vector<Boolean> dont_care =  new Vector<Boolean>(5);
 	private boolean verificare_combinatie;
      
-	public Combinate_proiectata(int value, boolean checked, Vector<Boolean> bits, Vector<Boolean> dont_care,
+	public Combinatie_proiectata(int value, boolean checked, Vector<Integer> bits, Vector<Boolean> dont_care,
 			boolean verificare_combinatie) {
 
 		this.value = value;
@@ -21,7 +21,7 @@ public class Combinate_proiectata implements Calcul {
 		this.verificare_combinatie = verificare_combinatie;
 	}
 
-	Combinate_proiectata()
+	public Combinatie_proiectata()
 	{
 		value = 0;
 		n_bits = 0;
@@ -34,7 +34,8 @@ public class Combinate_proiectata implements Calcul {
 
 	@Override
 	public void functie_calcul() {
-		// TODO Auto-generated method stub
+		
+		System.out.println("FUNCTIE DIN Combinatie_proiectata");
 	}
 
 }

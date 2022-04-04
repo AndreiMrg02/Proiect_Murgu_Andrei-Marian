@@ -15,26 +15,27 @@ public class TruthTable implements Serializable{
     private static final long serialVersionUID = 1L;
     private Vector<Integer> mintermen;
     private ArrayList<ArrayList<Integer>> bits;
-    private Vector<Integer> value;
-    private static TruthTable dbObject;
+    private Vector<Boolean> value;
+    private static TruthTable Object;
     
     public static TruthTable getInstance() {
 
-   	 Logger logger = Logger.getLogger(DiagramaKV.class.getName());
+    	Logger logger = Logger.getLogger(TruthTable.class.getName());
+    	
    	    Supplier<String> StrSupplier= () -> new String("S-a accesat instanta TruthTable!");
-	      if(dbObject == null) {
+	      if(Object == null) {
 	    	  logger.log(Level.INFO,
 	                   StrSupplier);
-	         dbObject = new TruthTable();
+	    	  Object = new TruthTable();
 	      }
-	       return dbObject;
+	       return Object;
 	   }
     
 	
 	private TruthTable() {
 		super();
 	}
-	public TruthTable(Vector<Integer> mintermen, ArrayList<ArrayList<Integer>> bits, Vector<Integer> value) {
+	public TruthTable(Vector<Integer> mintermen, ArrayList<ArrayList<Integer>> bits, Vector<Boolean> value) {
 		super();
 		this.mintermen = mintermen;
 		this.bits = bits;
@@ -52,10 +53,10 @@ public class TruthTable implements Serializable{
 	public void setBits(ArrayList<ArrayList<Integer>> bits) {
 		this.bits = bits;
 	}
-	public Vector<Integer> getValue() {
+	public Vector<Boolean> getValue() {
 		return value;
 	}
-	public void setValue(Vector<Integer> value) {
+	public void setValue(Vector<Boolean> value) {
 		this.value = value;
 	}
 

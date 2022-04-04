@@ -39,7 +39,7 @@ import editor.DiagramaKV;
 				    	     for(int i = 0; i < date.sizeTable(); i++)
 						    	{
 		                        
-						    	System.out.print(" "+date.getTable().getMintermen().get(i));
+						    	System.out.print(" "+ date.getTable().getMintermen().get(i));
 						    	
 						    	  for(int j = 0; j < date.getN_Bits(); j++)
 							    	{

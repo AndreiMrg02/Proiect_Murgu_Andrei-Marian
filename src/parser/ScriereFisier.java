@@ -40,11 +40,11 @@ public class ScriereFisier {
 	      linia_patru.add(1);
 	      linia_patru.add(1);
 	      arrLL.add(linia_patru);
-	      Vector<Integer> value =  new Vector<Integer>(4);
-	      value.add(0,1);
-	      value.add(1,0);
-	      value.add(2,1);
-	      value.add(3,0);
+	      Vector<Boolean> value =  new Vector<Boolean>(4);
+	      value.add(0,true);
+	      value.add(1,false);
+	      value.add(2,true);
+	      value.add(3,false);
 	
       	TruthTable table_biti =  new TruthTable(mintermen,arrLL,value);
         diagrama = Arrays.asList(
