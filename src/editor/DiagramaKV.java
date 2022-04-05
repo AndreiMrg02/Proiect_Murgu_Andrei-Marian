@@ -29,35 +29,23 @@ public class DiagramaKV extends AbstractFactory implements Serializable{
      */
     private static final long serialVersionUID = -7898613997619182121L;
     private int n_Bits;
-    private TruthTable table =  TruthTable.getInstance();
-    public DiagramaKV() {
+    private Mintermen mintermen_function =  Mintermen.getInstance();
+    private Maxtermen maxtermen_function =  Maxtermen.getInstance();
+
+	
+
+	public DiagramaKV() {
         this.setN_Bits(0);
-        this.setTable(table);
+        
     }
-    public DiagramaKV(int n_Bits, TruthTable table) {
-        super();
-        this.setN_Bits(n_Bits);
-        this.setTable(table);
-    }
+    public DiagramaKV(int n_Bits, TruthTable table, Mintermen mintermen_function, Maxtermen maxtermen_function) {
+		super();
+		this.n_Bits = n_Bits;
+		this.mintermen_function = mintermen_function;
+		this.maxtermen_function = maxtermen_function;
+	}
     
-    
-    public int getN_Bits() {
-        return n_Bits;
-    }
-    public void setN_Bits(int n_Bits) {
-        this.n_Bits = n_Bits;
-    }
-    public TruthTable getTable() {
-        return table;
-    }
    
-    public void setTable(TruthTable truthTable) {
-    	table =  truthTable;
-    }
-    public double sizeTable()
-    {
-        return Math.pow(2, n_Bits);
-    }
     public void  read_json( ) throws IOException
     {
        
@@ -74,37 +62,25 @@ public class DiagramaKV extends AbstractFactory implements Serializable{
             {
     	    	
     	    	   System.out.println("Numarul de biti:" + date.getN_Bits() + " \n");
-    	    	   
-//    	    	  	for(Integer mintermen: date.table.getMintermen()  )
-//        	    	   	{
-//        	    	   		System.out.println(" " + mintermen);
-//        	    	   
-//        	    	   	}
-//        	    		for(ArrayList<Integer> bits: date.table.getBits())
-//        	    		{
-//        	    			for(ArrayList<Integer> n_bits: date.table.getBits())
-//            	    		{
-//            	    			System.out.print(" " + n_bits.get(n_Bits));
-//            	    		}
-//        	    			System.out.print(" " + bits.get(n_Bits));
-//        	    		}
-//        	    		for(Boolean value: date.table.getValue() )
-//        	    	   	{
-//        	    	   		System.out.print("Value " + value);
-//        	    	   	}   	    	     	      	    	    	    		
-		    	     for(int i = 0; i < date.sizeTable(); i++)
+    	    	   System.out.print("Functie Mintermen: ");     	      	    	    	    		
+		    	     for(int i = 0; i < date.mintermen_function.getMintermen().size(); i++)
 				    	{
-                        
-				    	System.out.print(" " + date.table.getMintermen().get(i));
-				    	
-				    	  for(int j = 0; j < date.getN_Bits(); j++)
-					    	{
-					    	System.out.print(" " + date.table.getBits().get(i).get(j));
-					    	}
-				    	System.out.println(" "+ date.table.getValue().get(i));
+					    	System.out.print(" " + date.mintermen_function.getMintermen().get(i));
 				    	}
+		    	     System.out.println("\n");
+		    	     	date.getTerm("Mintermen").functie_calcul(date.getN_Bits());
+		    	     	System.out.print("\nFunctie Maxtermen: \n");   
+		    	     for(int i = 0; i < date.mintermen_function.getMintermen().size(); i++)
+				    	{
+					    	System.out.print(" " + date.maxtermen_function.getMaxtermen().get(i));
+				    	}
+		    
+		    	     System.out.println("\n");
+		    	     date.getTerm("Maxtermen").functie_calcul(date.getN_Bits());
+		    	   
             }
-	    	    	
+    	    System.out.println(" "); 	
+    	  
 
     	}
     	catch(FileNotFoundException ex)
@@ -122,16 +98,45 @@ public class DiagramaKV extends AbstractFactory implements Serializable{
 	public Calcul getTerm(String term) {
 		if(term.equalsIgnoreCase("Mintermen"))
 		{
-			return new Mintermen();
+			return mintermen_function;
 		}else if(term.equalsIgnoreCase("Maxtermen"))
 		{
-			return new Maxtermen();
+			return maxtermen_function;
 		}else if(term.equalsIgnoreCase("CombinatieProiectata"))
 		{
-			return new Combinatie_proiectata();
+			return Mintermen.getInstance();
+		}else
+		{
+			System.out.println("Functia nu exista !");
 		}
 		return null;
 	}
 
+	public Mintermen getMintermen_function() {
+		return mintermen_function;
+	}
+
+	public void setMintermen_function(Mintermen mintermen_function) {
+		this.mintermen_function = mintermen_function;
+	}
+
+	public Maxtermen getMaxtermen_function() {
+		return maxtermen_function;
+	}
+
+	public void setMaxtermen_function(Maxtermen maxtermen_function) {
+		this.maxtermen_function = maxtermen_function;
+	}
+	 public int getN_Bits() {
+	        return n_Bits;
+	    }
+	    public void setN_Bits(int n_Bits) {
+	        this.n_Bits = n_Bits;
+	    }
+	    public double sizeTable()
+	    {
+	        return Math.pow(2, n_Bits);
+	    }
+	
 }
 

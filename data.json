@@ -1,16 +1,12 @@
 [
 	{
-	"n_bits": 7,
-	"mintermen":[1,0,1,0],
-	"maxtermen":[1,0,1,0],
-	"dontCare":[1,0,1,0]
+	"n_bits": 2,
+	"mintermen":[2,3]
 	
 	},
 	{
 	"n_bits": 2,
-	"mintermen":[1,2,4,5],
-	"maxtermen":[3,5,6,1],
-	"dontCare":[1,0,1,0]
+	"mintermen":[2,3]
 	}
 ]
 

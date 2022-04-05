@@ -33,7 +33,7 @@ public class Combinatie_proiectata implements Calcul {
 	}
 
 	@Override
-	public void functie_calcul() {
+	public void functie_calcul(int n) {
 		
 		System.out.println("FUNCTIE DIN Combinatie_proiectata");
 	}

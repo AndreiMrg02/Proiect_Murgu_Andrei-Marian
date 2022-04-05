@@ -8,14 +8,15 @@ import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import functie.Mintermen;
+
 public class TruthTable implements Serializable{
     /**
      * 
      */
     private static final long serialVersionUID = 1L;
-    private Vector<Integer> mintermen;
+    private Mintermen position;
     private ArrayList<ArrayList<Integer>> bits;
-    private Vector<Boolean> value;
     private static TruthTable Object;
     
     public static TruthTable getInstance() {
@@ -35,17 +36,10 @@ public class TruthTable implements Serializable{
 	private TruthTable() {
 		super();
 	}
-	public TruthTable(Vector<Integer> mintermen, ArrayList<ArrayList<Integer>> bits, Vector<Boolean> value) {
+	public TruthTable(Mintermen mintermen, ArrayList<ArrayList<Integer>> bits) {
 		super();
-		this.mintermen = mintermen;
+		this.setPosition(mintermen);
 		this.bits = bits;
-		this.value = value;
-	}
-	public Vector<Integer> getMintermen() {
-		return mintermen;
-	}
-	public void setMintermen(Vector<Integer> mintermen) {
-		this.mintermen = mintermen;
 	}
 	public ArrayList<ArrayList<Integer>> getBits() {
 		return bits;
@@ -53,11 +47,13 @@ public class TruthTable implements Serializable{
 	public void setBits(ArrayList<ArrayList<Integer>> bits) {
 		this.bits = bits;
 	}
-	public Vector<Boolean> getValue() {
-		return value;
+
+	public Mintermen getPosition() {
+		return position;
 	}
-	public void setValue(Vector<Boolean> value) {
-		this.value = value;
+
+	public void setPosition(Mintermen mintermen) {
+		this.position = mintermen;
 	}
 
 

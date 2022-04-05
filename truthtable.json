@@ -1,23 +1,26 @@
 [
-{
+	  {
         "n_Bits": 2,
-        "table":
+        "mintermen_function":
             {
-             "mintermen":[0,1,2,3],
-             "bits":[[0,0],[0,1],[1,0],[1,1]],
-             "value":[true,false,true,false]
-             }
-
+             "functie_mintermen":[0,3]
+            },
+            "maxtermen_function":
+            {
+               "functie_maxtermen":[0,3]
+            }
+          
         },
-           {
+        {
         "n_Bits": 3,
-        "table":
+        "mintermen_function":
             {
-             "mintermen":[0,1,2,3,4,5,6,7],
-             "bits":[[0,0,0],[0,0,1],[0,1,0],[0,1,1],[1,0,0],[1,0,1],[1,1,0],[1,1,1]],
-             "value":[false,true,true,true,false,true,true,true]
-             }
-
+             "functie_mintermen":[0,7]
+            },
+            "maxtermen_function":
+            {
+               "functie_maxtermen":[0,7]
+            }
+          
         }
-      
 ]
