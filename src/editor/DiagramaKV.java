@@ -5,24 +5,19 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Serializable;
 import  java.lang.Math;
-import java.util.ArrayList;
-import java.util.Vector;
-import java.util.function.Supplier;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 
 import functie.Calcul;
-import functie.Combinatie_proiectata;
+import functie.Iterator;
 import functie.Maxtermen;
 import functie.Mintermen;
 import pattern.AbstractFactory;
 
 
-public class DiagramaKV extends AbstractFactory implements Serializable{
+public class DiagramaKV extends AbstractFactory implements Serializable {
 
     /**
      * 
@@ -77,6 +72,12 @@ public class DiagramaKV extends AbstractFactory implements Serializable{
 		    
 		    	     System.out.println("\n");
 		    	     date.getTerm("Maxtermen").functie_calcul(date.getN_Bits());
+		    	     for(Iterator iter = date.mintermen_function.getIterator(); iter.hasNext();)
+		    	     {
+		    	    	 String KV_min = (String)iter.next();
+		    	    	 System.out.println("Name : " + KV_min);
+		    	     }
+		    	     
 		    	   
             }
     	    System.out.println(" "); 	
@@ -105,14 +106,17 @@ public class DiagramaKV extends AbstractFactory implements Serializable{
 		}else if(term.equalsIgnoreCase("CombinatieProiectata"))
 		{
 			return Mintermen.getInstance();
-		}else
+		}
+		else
 		{
 			System.out.println("Functia nu exista !");
 		}
 		return null;
 	}
 
-	public Mintermen getMintermen_function() {
+	public Mintermen getMintermen_function() 
+	{
+		
 		return mintermen_function;
 	}
 
@@ -137,6 +141,6 @@ public class DiagramaKV extends AbstractFactory implements Serializable{
 	    {
 	        return Math.pow(2, n_Bits);
 	    }
-	
+	  
 }
 

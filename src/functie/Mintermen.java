@@ -2,11 +2,10 @@ package functie;
 
 import java.util.LinkedHashMap;
 import java.util.Vector;
-import java.util.function.Supplier;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-import editor.TruthTable;
+import org.apache.log4j.Logger;
+
+import org.apache.log4j.PropertyConfigurator;
 
 public class Mintermen implements Calcul {
 	
@@ -15,24 +14,32 @@ public class Mintermen implements Calcul {
 	Vector<String> sir_biti =  new Vector<String>();
 	LinkedHashMap<String,Integer> map =  new LinkedHashMap<String,Integer>();
 	String auxiliar_sir_biti =  new String();
-	
-	public static Mintermen getInstance() {
 
-    	Logger logger = Logger.getLogger(Mintermen.class.getName());
-    	
-   	    Supplier<String> StrSupplier= () -> new String("S-a accesat instanta Mintermen!");
+
+
+	public static Mintermen getInstance() {
+		final Logger logger = Logger.getLogger(Mintermen.class);
+		PropertyConfigurator.configure("log4j.properties");
 	      if(Object == null) {
-	    	  logger.log(Level.INFO,
-	                   StrSupplier);
+	    	logger.info("S-a accesat instanta Singleton din MINTERMEN");
 	    	  Object = new Mintermen();
 	      }
 	       return Object;
 	   }
     
-	private Mintermen()
+	public Mintermen()
 	{
 		super();
 	}
+	
+	public LinkedHashMap<String, Integer> getMap() {
+		return map;
+	}
+
+	public void setMap(LinkedHashMap<String, Integer> map) {
+		this.map = map;
+	}
+
 	public void functie_calcul(int n_Bits) {
 		for(int i = 0; i < Math.pow(2, n_Bits); i++)
 		{
@@ -63,9 +70,10 @@ public class Mintermen implements Calcul {
 		{
 	 		map.put(sir_biti.get(i), value.get(i));	
 		}
-	 	 for (String i : map.keySet()) {
+	 	for (String i : map.keySet()) 
+	 	{
 	 	      System.out.println( i + " " + map.get(i));
-	 	    }
+	 	  }
 	 	
 	
 	}
@@ -103,5 +111,46 @@ public class Mintermen implements Calcul {
 	public void setValue(Vector<Integer> value) {
 		this.value = value;
 	}
+	
+	public Iterator getIterator() {
+		return new Iterator_unu();
+		}
+	private class Iterator_unu implements Iterator
+	{
+		boolean verificare;
+	int index;
 
+    @Override
+    public boolean hasNext() {
+    
+       if(index < map.size())
+       {
+          return true;
+       }
+       return false;
+    }
+
+    @Override
+    public Object next() {
+    	verificare = false;
+    	while(this.hasNext() && verificare == false)
+    	{
+    		if(value.get(index) == 1)
+    		{
+    			verificare = true;
+    		}
+    		else
+    		{
+    			verificare = false;
+    			index++;
+    		}
+    	}
+       if(this.hasNext())
+       {
+    	   return sir_biti.get(index++);
+       }
+       return null;
+    	}		
+	}
 }
+

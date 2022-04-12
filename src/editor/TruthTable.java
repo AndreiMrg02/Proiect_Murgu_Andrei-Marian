@@ -2,8 +2,6 @@ package editor;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Vector;
 import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;

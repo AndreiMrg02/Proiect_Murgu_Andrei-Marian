@@ -3,9 +3,9 @@ package functie;
 
 import java.util.LinkedHashMap;
 import java.util.Vector;
-import java.util.function.Supplier;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 public class Maxtermen implements Calcul {
 
@@ -20,12 +20,10 @@ public class Maxtermen implements Calcul {
 	
 	public static Maxtermen getInstance() {
 
-    	Logger logger = Logger.getLogger(Maxtermen.class.getName());
-    	
-   	    Supplier<String> StrSupplier= () -> new String("S-a accesat instanta Maxtermen!");
+		final Logger logger = Logger.getLogger(Maxtermen.class);
+		PropertyConfigurator.configure("log4j.properties");
 	      if(Object == null) {
-	    	  logger.log(Level.INFO,
-	                   StrSupplier);
+	    	logger.info("S-a accesat instanta Singleton din Maxtermen");
 	    	  Object = new Maxtermen();
 	      }
 	       return Object;

@@ -5,7 +5,7 @@
             {
              "functie_mintermen":[0,3]
             },
-            "maxtermen_function":
+        "maxtermen_function":
             {
                "functie_maxtermen":[0,3]
             }
@@ -15,11 +15,11 @@
         "n_Bits": 3,
         "mintermen_function":
             {
-             "functie_mintermen":[0,7]
+             "functie_mintermen":[0,1,4,7]
             },
             "maxtermen_function":
             {
-               "functie_maxtermen":[0,7]
+               "functie_maxtermen":[0,1,4,7]
             }
           
         }
