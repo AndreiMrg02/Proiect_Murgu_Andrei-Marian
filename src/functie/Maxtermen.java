@@ -68,6 +68,10 @@ public class Maxtermen implements Calcul {
 	 	    }
 	 	
 	}
+	public void functie_calcul_tastatura()
+	{
+		 
+	}
 	public Vector<Integer> getMaxtermen() {
 		return functie_maxtermen;
 	}

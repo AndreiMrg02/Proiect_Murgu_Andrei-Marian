@@ -22,6 +22,7 @@ public class DiagramaKV extends AbstractFactory implements Serializable {
     /**
      * 
      */
+	private DiagramaKV[] kv = null;
     private static final long serialVersionUID = -7898613997619182121L;
     private int n_Bits;
     private Mintermen mintermen_function =  Mintermen.getInstance();
@@ -40,11 +41,19 @@ public class DiagramaKV extends AbstractFactory implements Serializable {
 		this.maxtermen_function = maxtermen_function;
 	}
     
+    public DiagramaKV getDiagramaKV(int index)
+    {
+    	if(index <= kv.length)
+    	{
+    		return kv[index];
+    	}
+		return null;
+    }
    
     public void  read_json( ) throws IOException
     {
        
-    	DiagramaKV[] kv = null;
+    	
     	try {
     		
     		JsonReader reader = new JsonReader(new FileReader("truthtable.json"));
@@ -75,13 +84,14 @@ public class DiagramaKV extends AbstractFactory implements Serializable {
 		    	     for(Iterator iter = date.mintermen_function.getIterator(); iter.hasNext();)
 		    	     {
 		    	    	 String KV_min = (String)iter.next();
-		    	    	 System.out.println("Name : " + KV_min);
+		    	    	 System.out.println("Sirul : " + KV_min);
 		    	     }
+		    
 		    	     
 		    	   
             }
     	    System.out.println(" "); 	
-    	  
+    	    
 
     	}
     	catch(FileNotFoundException ex)

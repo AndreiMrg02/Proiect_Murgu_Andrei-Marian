@@ -113,9 +113,9 @@ public class Mintermen implements Calcul {
 	}
 	
 	public Iterator getIterator() {
-		return new Iterator_unu();
+		return new Iterator_mintermen();
 		}
-	private class Iterator_unu implements Iterator
+	private class Iterator_mintermen implements Iterator
 	{
 		boolean verificare;
 	int index;
