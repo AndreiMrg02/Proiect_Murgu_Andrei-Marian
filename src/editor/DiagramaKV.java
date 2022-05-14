@@ -72,7 +72,13 @@ public class DiagramaKV extends AbstractFactory implements Serializable {
 					    	System.out.print(" " + date.mintermen_function.getMintermen().get(i));
 				    	}
 		    	     System.out.println("\n");
-		    	     	date.getTerm("Mintermen").functie_calcul(date.getN_Bits());
+		    	     	//date.getTerm("Mintermen").functie_calcul(date.getN_Bits());
+//		    	 	date.getTerm("Mintermen").initializare_vector(date.getN_Bits());
+//	    	     	date.getTerm("Mintermen").initializare_mintermen_din_json(date.getN_Bits());
+//	    	     	date.getTerm("Mintermen").construire_sir_biti(date.getN_Bits());
+		    	    initializare_biti("Mintermen", date);
+	    	     	date.getTerm("Mintermen").afisare_sir_biti();
+		    	     	
 		    	     	System.out.print("\nFunctie Maxtermen: \n");   
 		    	     for(int i = 0; i < date.mintermen_function.getMintermen().size(); i++)
 				    	{
@@ -80,7 +86,12 @@ public class DiagramaKV extends AbstractFactory implements Serializable {
 				    	}
 		    
 		    	     System.out.println("\n");
-		    	     date.getTerm("Maxtermen").functie_calcul(date.getN_Bits());
+		    	    // date.getTerm("Maxtermen").functie_calcul(date.getN_Bits());
+		    	    initializare_biti("Maxtermen", date);
+//		    	 	date.getTerm("Maxtermen").initializare_vector(date.getN_Bits());
+//	    	     	date.getTerm("Maxtermen").initializare_mintermen_din_json(date.getN_Bits());
+//	    	     	date.getTerm("Maxtermen").construire_sir_biti(date.getN_Bits());
+	    	     	date.getTerm("Maxtermen").afisare_sir_biti();
 		    	     for(Iterator iter = date.mintermen_function.getIterator(); iter.hasNext();)
 		    	     {
 		    	    	 String KV_min = (String)iter.next();
@@ -104,6 +115,12 @@ public class DiagramaKV extends AbstractFactory implements Serializable {
     	}
     	
     	
+    }
+    void initializare_biti(String clasa, DiagramaKV kv) 
+    {
+    	kv.getTerm(clasa).initializare_vector(kv.getN_Bits());
+    	kv.getTerm(clasa).initializare_mintermen_din_json(kv.getN_Bits());
+    	kv.getTerm(clasa).construire_sir_biti(kv.getN_Bits());
     }
 	@Override
 	public Calcul getTerm(String term) {

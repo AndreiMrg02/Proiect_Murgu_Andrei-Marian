@@ -33,23 +33,33 @@ public class Maxtermen implements Calcul {
 	{
 		super();
 	}
-	public void functie_calcul(int n_Bits) {
+
+	@Override
+	public void initializare_vector(int n_Bits) {
 		for(int i = 0; i < Math.pow(2, n_Bits); i++)
 		{
 			value.add(i,1);	
-		}
-		for(int i = 0; i < Math.pow(2, n_Bits); i++)
+		}	
+	}
+	@Override
+	public void initializare_mintermen_din_json(int n_Bits) {
+		for(int i = 0; i < Math.pow(2, n_Bits); i++) 
 		{
 
-			for (Integer name : functie_maxtermen) {
-				if( i ==  name )
+			for (Integer json_position : functie_maxtermen) {
+				if( i ==  json_position )
 				{
 					value.set(i,0);
 				}		
 			}
 
 		}
-		for (int i = 0 ; i != (1 << n_Bits)  ; i++) {
+		
+	}
+
+	@Override
+	public void construire_sir_biti(int n_Bits) {
+		for (int i = 0 ; i != (1 << n_Bits)  ; i++) { 
 			
 			auxiliar_sir_biti = Integer.toBinaryString(i);
 		    while (auxiliar_sir_biti.length() != n_Bits) {
@@ -63,14 +73,16 @@ public class Maxtermen implements Calcul {
 		{
 	 		map.put(sir_biti.get(i), value.get(i));	
 		}
-	 	 for (String i : map.keySet()) {
+	 	
+		
+	}
+
+	@Override
+	public void afisare_sir_biti() {
+		 for (String i : map.keySet()) {
 	 	      System.out.println( i + " " + map.get(i));
 	 	    }
-	 	
-	}
-	public void functie_calcul_tastatura()
-	{
-		 
+		
 	}
 	public Vector<Integer> getMaxtermen() {
 		return functie_maxtermen;
@@ -84,4 +96,7 @@ public class Maxtermen implements Calcul {
 	public void setValue(Vector<Integer> value) {
 		this.value = value;
 	}
+
+
+
 }

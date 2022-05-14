@@ -32,10 +32,29 @@ public class Combinatie_proiectata implements Calcul {
 		
 	}
 
+
 	@Override
-	public void functie_calcul(int n) {
+	public void initializare_vector(int n_Bits) {
+		// TODO Auto-generated method stub
 		
-		System.out.println("FUNCTIE DIN Combinatie_proiectata");
+	}
+
+	@Override
+	public void construire_sir_biti(int n_Bits) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void afisare_sir_biti() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void initializare_mintermen_din_json(int n_Bits) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

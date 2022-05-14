@@ -15,47 +15,37 @@ public class Mintermen implements Calcul {
 	LinkedHashMap<String,Integer> map =  new LinkedHashMap<String,Integer>();
 	String auxiliar_sir_biti =  new String();
 
-
-
-	public static Mintermen getInstance() {
-		final Logger logger = Logger.getLogger(Mintermen.class);
-		PropertyConfigurator.configure("log4j.properties");
-	      if(Object == null) {
-	    	logger.info("S-a accesat instanta Singleton din MINTERMEN");
-	    	  Object = new Mintermen();
-	      }
-	       return Object;
-	   }
-    
 	public Mintermen()
 	{
 		super();
 	}
-	
-	public LinkedHashMap<String, Integer> getMap() {
-		return map;
-	}
 
-	public void setMap(LinkedHashMap<String, Integer> map) {
-		this.map = map;
-	}
-
-	public void functie_calcul(int n_Bits) {
+	@Override
+	public void initializare_vector(int n_Bits) {
 		for(int i = 0; i < Math.pow(2, n_Bits); i++)
 		{
 			value.add(i,0);	
 		}
+		
+	}
+	@Override
+	public void initializare_mintermen_din_json(int n_Bits) {
 		for(int i = 0; i < Math.pow(2, n_Bits); i++)
 		{
 
-			for (Integer name : functie_mintermen) {
-				if( i ==  name )
+			for (Integer json_position : functie_mintermen) {
+				if( i ==  json_position )
 				{
 					value.set(i,1);
 				}		
 			}
 	
 		}
+		
+		
+	}
+	@Override
+	public void construire_sir_biti(int n_Bits) {
 		for (int i = 0 ; i != (1 << n_Bits)  ; i++) {
 			
 			auxiliar_sir_biti = Integer.toBinaryString(i);
@@ -70,13 +60,37 @@ public class Mintermen implements Calcul {
 		{
 	 		map.put(sir_biti.get(i), value.get(i));	
 		}
+		
+	}
+	
+	@Override
+	public void afisare_sir_biti() {
 	 	for (String i : map.keySet()) 
 	 	{
 	 	      System.out.println( i + " " + map.get(i));
-	 	  }
-	 	
-	
+	    }
+		
 	}
+	public static Mintermen getInstance() {
+		final Logger logger = Logger.getLogger(Mintermen.class);
+		PropertyConfigurator.configure("log4j.properties");
+	      if(Object == null) {
+	    	logger.info("S-a accesat instanta Singleton din MINTERMEN");
+	    	  Object = new Mintermen();
+	      }
+	       return Object;
+	   }
+    
+	
+	
+	public LinkedHashMap<String, Integer> getMap() {
+		return map;
+	}
+
+	public void setMap(LinkedHashMap<String, Integer> map) {
+		this.map = map;
+	}
+
 	public Vector<Integer> getMintermen() {
 		return functie_mintermen;
 	}
@@ -152,5 +166,6 @@ public class Mintermen implements Calcul {
        return null;
     	}		
 	}
+	
 }
 
