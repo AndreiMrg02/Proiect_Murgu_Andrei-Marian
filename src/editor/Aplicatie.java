@@ -1,22 +1,20 @@
 package editor;
 
 
-import gui.GraphicInterface;
+
+import gui.InitializareInterfata;
+
 
 
 public class Aplicatie {
 
 	    public static void main(String[] args)
 	    {
-	    	GraphicInterface gui = new GraphicInterface();
-	    	
-	    	gui.buton_calculeaza();
-	    	gui.facade(1);
-	   
-	    	
-	    	
-
+	    	 InitializareInterfata KvMap =  new InitializareInterfata();
+	    	 KvMap.KvMap_solver();
 	    }
+
+	    	
 
 
 }

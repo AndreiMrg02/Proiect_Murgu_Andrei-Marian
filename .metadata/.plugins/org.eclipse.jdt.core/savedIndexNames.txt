@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+E:\FACULTATE\Anul2\Semestrul2\Laborator\InformaticaAplicata\Proiect_Murgu_Andrei-Marian\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+131107447.index
+2860267308.index

@@ -1,0 +1,20 @@
+1653292577588	Move compilation unit
+1653294546225	Rename type 'Algoritmi'
+1653295640992	Rename local variable 'local'
+1653310882964	Rename type 'AlgoritmTr'
+1653314788179	Copy compilation unit
+1653314993870	Delete element
+1653315063300	Move compilation unit
+1653315097763	Delete element
+1653329490684	Encapsulate field 'algoritm'
+1653336722567	Encapsulate field 'frame'
+1653337006235	Delete element
+1653338123428	Delete element
+1653338125965	Delete element
+1653338181952	Delete element
+1653338244768	Delete element
+1653338306933	Rename type 'Mintermen'
+1653338312403	Delete element
+1653338315476	Delete element
+1653338326809	Delete element
+1653338394630	Rename field 'mintermen_function'

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="E:\FACULTATE\Anul2\Semestrul2\Laborator\InformaticaAplicata\Proiect_Murgu_Andrei-Marian"/>
+			<item value="C:\Users\Murgu Andrei-Marian\Desktop\Graphics-Editor-master"/>
+			<item value="C:\Users\Murgu Andrei-Marian\Desktop\BarChart-master"/>
+			<item value="C:\Users\Murgu Andrei-Marian\Desktop\GradleTese\KarnaughMapSolver-main"/>
+			<item value="C:\Users\Murgu Andrei-Marian\Desktop\KarnaughMapSimplifier-master"/>
+			<item value="C:\Users\Murgu Andrei-Marian\Desktop\K-Map-Solver----Java-Project-master"/>
+			<item value="C:\Users\Murgu Andrei-Marian\Desktop\ks-boolean-expression-master"/>
+			<item value="C:\Users\Murgu Andrei-Marian\Desktop\KVTEST\karnaugh-map-simplifier-master"/>
+			<item value="C:\Users\Murgu Andrei-Marian\Desktop\KVTEST\KarnaughMapGenerator-master"/>
+			<item value="C:\Users\Murgu Andrei-Marian\Desktop\KVTEST\KarnaughMapGenerator-master\bin"/>
+			<item value="C:\Users\Murgu Andrei-Marian\Desktop\quine-mccluskey-master"/>
+			<item value="C:\Users\Murgu Andrei-Marian\Desktop\TEST2222222\boolean-simplifier-visualizer-master"/>
+			<item value="C:\Users\Murgu Andrei-Marian\Desktop\TEST2222222\boolean-minimizer-master"/>
+			<item value="C:\Users\Murgu Andrei-Marian\Desktop\KVTEST\karnaught-map-solver-master"/>
+			<item value="C:\Users\Murgu Andrei-Marian\Desktop\karnaugh-map-simplifier-master"/>
+			<item value="E:\FACULTATE\Anul2\Semestrul2\Laborator\InformaticaAplicata\UltimaReferintaProiect"/>
+		</list>
+	</section>
+	<section name="SaveAsDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="706"/>
+		<item key="DIALOG_Y_ORIGIN" value="142"/>
+		<item key="DIALOG_WIDTH" value="525"/>
+		<item key="DIALOG_HEIGHT" value="580"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

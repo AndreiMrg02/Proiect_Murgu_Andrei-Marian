@@ -1,10 +1,13 @@
 package functie;
 
+import algoritm.AlgoritmFour;
+import algoritm.AlgoritmThree;
+import algoritm.AlgoritmTwo;
+
 public interface Calcul {
 	
-	void initializare_vector(int n_Bits);
-	void initializare_mintermen_din_json(int n_Bits);
-	void construire_sir_biti(int n_Bits);
-	void afisare_sir_biti();
+	public AlgoritmTwo Initializare_doi(int[] val);
+	public AlgoritmThree Initializare_trei(int[] val);
+	public AlgoritmFour Initializare_patru(int[] val);
 
 }
