@@ -1,11 +1,11 @@
 package algoritm;
 
-public class AlgoritmFour {
+public class AlgoritmPatruBiti implements Check2{
 	 private String sir_biti = "";
 	    private final int matrice[][] = new int[4][4];
 	    private final int verificare[][] = new int[4][4];
 
-	    public AlgoritmFour(int val[]) 
+	    public AlgoritmPatruBiti(int val[]) 
 	    {
 	        int count = 0;
 	        for (int i = 0; i < 4; i++)
@@ -18,19 +18,19 @@ public class AlgoritmFour {
 	        }
 	    }
 
-	    public String solve() {
-	        if (!check16()) {
-	            // reaches if all values are 1
+	    public String rezolvare_diagrama(int n_Bits) {
+	        if (!verificare_saispreseze_biti()) {
+	    
 	            sir_biti = "1";
 	        } else {
-	            // reaches if smaller groups are to be found rather than 16
+
 	            for (int i = 0; i < 4; i++) {
 	                for (int j = 0; j < 4; j++) {
 	                    if (matrice[i][j] == 1 && verificare[i][j] == 0) {
 	                        if (check8(i, j)) {
 	                            if (check4(i, j)) {
-	                                if (check2(i, j)) {
-	                                    nogrouping(i, j);
+	                                if (verificare_doi_biti(i, j, n_Bits)) {
+	                                    grup_biti(i, j);
 	                                }
 	                            }
 	                        }
@@ -41,27 +41,27 @@ public class AlgoritmFour {
 	        return sir_biti;
 	    }
 
-	    // check for 16
-	    private boolean check16() {
-	        boolean search_smaller_group = false;
+	    
+	    private boolean verificare_saispreseze_biti() {
+	        boolean cautare_biti = false;
 
 	        outer:
 	        for (int i = 0; i < 4; i++) {
 	            for (int j = 0; j < 4; j++) {
 	                if (matrice[i][j] == 1) {
-	                    search_smaller_group = false;
+	                    cautare_biti = false;
 	                } else {
-	                    // breaks outer loop and returns true to find smaller groups
-	                    search_smaller_group = true;
+	       
+	                    cautare_biti = true;
 	                    break outer;
 	                }
 	            }
 	        }
-	        return search_smaller_group;
+	        return cautare_biti;
 	    }
 
 	    private boolean check8(int row, int col) {
-	        boolean search_smaller_group = true;
+	        boolean cautare_biti = true;
 	        String local = "";
 
 	        if (matrice[row][0] == 1 && matrice[row][1] == 1 && matrice[row][2] == 1 && matrice[row][3] == 1 && matrice[(row + 1) % 4][0] == 1 && matrice[(row + 1) % 4][1] == 1
@@ -80,8 +80,8 @@ public class AlgoritmFour {
 	            }
 	            matches(local);
 
-	            search_smaller_group = false;
-	            // make checked
+	            cautare_biti = false;
+	     
 	            for(int i = 0; i < col; i++)
 	            {
 	            	verificare[row][i] = 1;
@@ -104,8 +104,8 @@ public class AlgoritmFour {
 	            }
 	            matches(local);
 
-	            search_smaller_group = false;
-	            // make checked
+	            cautare_biti = false;
+	    
 	            for(int i = 0; i < col; i++)
 	            {
 	            	verificare[row][i] = 1;
@@ -128,8 +128,8 @@ public class AlgoritmFour {
 	             }
 	            matches(local);
 
-	            search_smaller_group = false;
-	            // make checked
+	            cautare_biti = false;
+	        
 	            for(int i = 0; i < row; i++)
 	            {
 	            	verificare[i][col] = 1;
@@ -152,23 +152,21 @@ public class AlgoritmFour {
 	            }
 	            matches(local);
 
-	            search_smaller_group = false;
-	            // make checked
+	            cautare_biti = false;
+	         
 	            for(int i = 0; i < row; i++)
 	            {
 	            	verificare[i][col] = 1;
 	            	verificare[i][(4 + (col - 1 ) ) % 4] = 1;
 	            }
 	        }
-	        return search_smaller_group;
+	        return cautare_biti;
 	    }
-
-	    // check for 4
-	    private boolean check4(int r, int c) {
-	        boolean search_smaller_group = true;
-	        String local = "";
-
-	        if (matrice[r][0] == 1 && matrice[r][1] == 1 && matrice[r][2] == 1 && matrice[r][3] == 1) { // row fours
+	    // 
+	    private String adaugare_doi_biti(int r,int c)
+	    {
+	    	String local = "";
+	    	if (matrice[r][0] == 1 && matrice[r][1] == 1 && matrice[r][2] == 1 && matrice[r][3] == 1) { // row fours
 	            if (r == 0) {
 	                local = "A'B'";
 	            }
@@ -182,8 +180,7 @@ public class AlgoritmFour {
 	                local = "AB'";
 	            }
 	            matches(local);
-	            search_smaller_group = false;
-	            // make checked
+	            
 	            for(int i = 0; i < c; i++)
 	            {
 	            	verificare[r][i] = 1;
@@ -203,15 +200,13 @@ public class AlgoritmFour {
 
 	            }
 	            matches(local);
-	            search_smaller_group = false;
-	            // make checked
+	            
 	            for(int i = 0; i < r; i++)
 	            {
 	            	verificare[i][c] = 1;
 	            }
-	    
-	        } else if (matrice[r][c] == 1 && matrice[r][(c + 1) % 4] == 1 && matrice[(r + 1) % 4][c] == 1 && matrice[(r + 1) % 4][(c + 1) % 4] == 1) {
-	            // rows ++ & columns ++
+	        }  else if (matrice[r][c] == 1 && matrice[r][(c + 1) % 4] == 1 && matrice[(r + 1) % 4][c] == 1 && matrice[(r + 1) % 4][(c + 1) % 4] == 1) {
+	           
 	            if (r == 0) {
 	                local = "A'";
 	            }
@@ -224,8 +219,6 @@ public class AlgoritmFour {
 	            if (r == 3) {
 	                local = "B'";
 	            }
-	         //  minimizare_opt_randuri(local);
-	           System.out.println("LOCAL: ->  " + local);
 	            if (c == 0) {
 	                local = local + "C'";
 	            }
@@ -241,50 +234,69 @@ public class AlgoritmFour {
 
 	            matches(local);
 
-	            search_smaller_group = false;
-	            // make checked
+	            
 	            verificare[r][c] = 1;
 	            verificare[r][(c + 1) % 4] = 1;
 	            verificare[(r + 1) % 4][c] = 1;
 	            verificare[(r + 1) % 4][(c + 1) % 4] = 1;
-	        } else if (matrice[r][(4 + (c - 1)) % 4] == 1 && matrice[r][c] == 1 && matrice[(r + 1) % 4][(4 + (c - 1)) % 4] == 1 && matrice[(r + 1) % 4][c] == 1) {
-	            // rows ++ & columns --
-	            if (r == 0) {
-	                local = "A'";
-	            }
-	            if (r == 1) {
-	                local = "B";
-	            }
-	            if (r == 2) {
-	                local = "A";
-	            }
-	            if (r == 3) {
-	                local = "B'";
-	            }
-	            if (c == 0) {
-	                local = local + "D'";
-	            }
-	            if (c == 1) {
-	                local = local + "C'";
-	            }
-	            if (c == 2) {
-	                local = local + "D";
-	            }
-	            if (c == 3) {
-	                local = local + "C'";
-	            }
+	        }
+	        else
+	        {
+	        	return null;
+	        }
+	    	return local;
+	    }
+	    private void adaugare_un_bit(int r, int c, String local)
+	    {
+	    	if (r == 0) {
+                local = "A'";
+            }
+            if (r == 1) {
+                local = "B";
+            }
+            if (r == 2) {
+                local = "A";
+            }
+            if (r == 3) {
+                local = "B'";
+            }
+            if (c == 0) {
+                local = local + "D'";
+            }
+            if (c == 1) {
+                local = local + "C'";
+            }
+            if (c == 2) {
+                local = local + "D";
+            }
+            if (c == 3) {
+                local = local + "C'";
+            }
 
-	            matches(local);
+            matches(local);
+	    }
 
-	            search_smaller_group = false;
-	            // make checked
+	    
+	    private boolean check4(int r, int c) {
+	        boolean cautare_biti = true;
+	        String local = "";
+	        local = adaugare_doi_biti(r,c);
+	        if(local != null)
+	        {
+	        	cautare_biti =  false;
+	        }
+	        else if (matrice[r][(4 + (c - 1)) % 4] == 1 && matrice[r][c] == 1 && matrice[(r + 1) % 4][(4 + (c - 1)) % 4] == 1 && matrice[(r + 1) % 4][c] == 1) {
+	            
+	        	adaugare_un_bit( r,  c,  local);
+	            cautare_biti = false;
+	            
 	            verificare[r][(4 + (c - 1)) % 4] = 1;
 	            verificare[r][c] = 1;
 	            verificare[(r + 1) % 4][(4 + (c - 1)) % 4] = 1;
 	            verificare[(r + 1) % 4][c] = 1;
 
 	        } else if (matrice[(4 + (r - 1)) % 4][(4 + (c - 1)) % 4] == 1 && matrice[(4 + (r - 1)) % 4][c] == 1 && matrice[r][(4 + (c - 1)) % 4] == 1 && matrice[r][c] == 1) {
-	            // rows -- & columns --
+	            
 	            if (r == 0) {
 	                local = "B'";
 	            }
@@ -312,14 +324,14 @@ public class AlgoritmFour {
 
 	            matches(local);
 
-	            search_smaller_group = false;
-	            // make checked
+	            cautare_biti = false;
+	            
 	            verificare[(4 + (r - 1)) % 4][(4 + (c - 1)) % 4] = 1;
 	            verificare[(4 + (r - 1)) % 4][c] = 1;
 	            verificare[r][(4 + (c - 1)) % 4] = 1;
 	            verificare[r][c] = 1;
 	        } else if (matrice[(4 + (r - 1)) % 4][c] == 1 && matrice[(4 + (r - 1)) % 4][(c + 1) % 4] == 1 && matrice[r][c] == 1 && matrice[r][(c + 1) % 4] == 1) {
-	            // rows-- & columns++
+	           
 	            if (r == 0) {
 	                local = "B'";
 	            }
@@ -347,19 +359,19 @@ public class AlgoritmFour {
 
 	            matches(local);
 
-	            search_smaller_group = false;
-	            // make checked
+	            cautare_biti = false;
+	            
 	            verificare[(4 + (r - 1)) % 4][c] = 1;
 	            verificare[(4 + (r - 1)) % 4][(c + 1) % 4] = 1;
 	            verificare[r][c] = 1;
 	            verificare[r][(c + 1) % 4] = 1;
 	        }
-	        return search_smaller_group;
+	        return cautare_biti;
 	    }
 	   
-	    // check for 2
-	    private boolean check2(int r, int c) {
-	        boolean search_smaller_group = true;
+	   
+	    public boolean verificare_doi_biti(int r, int c,int n_bits) {
+	        boolean cautare_biti = true;
 	        String local = "";
 
 	        if (matrice[r][c] == 1 && matrice[r][(c + 1) % 4] == 1) { // columns ++
@@ -390,8 +402,8 @@ public class AlgoritmFour {
 
 	            matches(local);
 
-	            search_smaller_group = false;
-	            // make checked
+	            cautare_biti = false;
+	          
 	            verificare[r][c] = 1;
 	            verificare[r][(c + 1) % 4] = 1;
 
@@ -423,8 +435,8 @@ public class AlgoritmFour {
 
 	            matches(local);
 
-	            search_smaller_group = false;
-	            // make checked
+	            cautare_biti = false;
+	           
 	            verificare[r][(4 + (c - 1)) % 4] = 1;
 	            verificare[r][c] = 1;
 	        } else if (matrice[r][c] == 1 && matrice[(r + 1) % 4][c] == 1) { // rows ++
@@ -455,8 +467,8 @@ public class AlgoritmFour {
 
 	            matches(local);
 
-	            search_smaller_group = false;
-	            // make checked
+	            cautare_biti = false;
+	       
 	            verificare[r][c] = 1;
 	            verificare[(r + 1) % 4][c] = 1;
 	        } else if (matrice[r][c] == 1 && matrice[(4 + (r - 1)) % 4][c] == 1) { // rows --
@@ -487,16 +499,16 @@ public class AlgoritmFour {
 
 	            matches(local);
 
-	            search_smaller_group = false;
-	            // make checked
+	            cautare_biti = false;
+	           
 	            verificare[r][c] = 1;
 	            verificare[(4 + (r - 1)) % 4][c] = 1;
 	        }
-	        return search_smaller_group;
+	        return cautare_biti;
 	    }
 
-	    // no grouping
-	    private void nogrouping(int r, int c) {
+	
+	    public void grup_biti(int r, int c) {
 	        String local = "";
 	        if (r == 0) {
 	            local = "A'B'";
@@ -536,5 +548,6 @@ public class AlgoritmFour {
 	         }
 	    	
 	    }
+
 
 }

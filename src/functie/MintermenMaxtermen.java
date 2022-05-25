@@ -6,28 +6,28 @@ import org.apache.log4j.Logger;
 
 import org.apache.log4j.PropertyConfigurator;
 
-import algoritm.AlgoritmFour;
-import algoritm.AlgoritmThree;
-import algoritm.AlgoritmTwo;
+import algoritm.AlgoritmPatruBiti;
+import algoritm.AlgoritmTreiBiti;
+import algoritm.AlgoritmDoiBiti;
 
 public class MintermenMaxtermen implements Calcul{
 	
 	private Vector<Integer> functie_mintermen =  new Vector<Integer>();
     private static MintermenMaxtermen Object;
 	
-	public AlgoritmTwo Initializare_doi(int[] val)
+	public AlgoritmDoiBiti Initializare_doi(int[] val)
 	{
-		AlgoritmTwo two =  new AlgoritmTwo(val);
+		AlgoritmDoiBiti two =  new AlgoritmDoiBiti(val);
 		return two;
 	}
-	public AlgoritmThree Initializare_trei(int[] val)
+	public AlgoritmTreiBiti Initializare_trei(int[] val)
 	{
-		AlgoritmThree three =  new AlgoritmThree(val);
+		AlgoritmTreiBiti three =  new AlgoritmTreiBiti(val);
 		return  three;
 	}
-	public AlgoritmFour Initializare_patru(int[] val)
+	public AlgoritmPatruBiti Initializare_patru(int[] val)
 	{
-		AlgoritmFour four =  new AlgoritmFour(val);
+		AlgoritmPatruBiti four =  new AlgoritmPatruBiti(val);
 		return  four;
 	}
 	public MintermenMaxtermen()
@@ -38,7 +38,7 @@ public class MintermenMaxtermen implements Calcul{
 		final Logger logger = Logger.getLogger(MintermenMaxtermen.class);
 		PropertyConfigurator.configure("log4j.properties");
 	      if(Object == null) {
-	    	logger.info("S-a accesat instanta Singleton din MINTERMEN");
+	    	logger.info("S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN");
 	    	  Object = new MintermenMaxtermen();
 	      }
 	       return Object;

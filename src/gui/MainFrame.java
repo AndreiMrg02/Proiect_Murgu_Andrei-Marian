@@ -3,6 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package gui;
 
 import java.awt.Color;
@@ -87,7 +92,7 @@ public class MainFrame extends javax.swing.JFrame {
         setTitle("K-Map Solver-by Murgu Andrei-Marian ");
 
         textpane.setEditable(false);
-        textpane.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        textpane.setFont(new java.awt.Font("Cambria", 0, 24)); // NOI18N
         textpane.setFocusable(false);
         textpane.setText(" Don't care = 0");
         jScrollPane1.setViewportView(textpane);
@@ -219,7 +224,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         twvarpanel.setLayout(new java.awt.GridLayout(2, 2, 1, 1));
 
-        twvar0.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        twvar0.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
         twvar0.setText("0");
         twvar0.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "0 | A'B'", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.BELOW_TOP, new java.awt.Font("Lucida Console", 0, 24))); // NOI18N
         twvar0.addActionListener(new java.awt.event.ActionListener() {
@@ -229,7 +234,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         twvarpanel.add(twvar0);
 
-        twvar1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        twvar1.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
         twvar1.setText("0");
         twvar1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "1 | A'B", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.BELOW_TOP, new java.awt.Font("Lucida Console", 0, 24))); // NOI18N
         twvar1.addActionListener(new java.awt.event.ActionListener() {
@@ -239,7 +244,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         twvarpanel.add(twvar1);
 
-        twvar2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        twvar2.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
         twvar2.setText("0");
         twvar2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "2 | AB'", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.BELOW_TOP, new java.awt.Font("Lucida Console", 0, 24))); // NOI18N
         twvar2.addActionListener(new java.awt.event.ActionListener() {
@@ -249,7 +254,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         twvarpanel.add(twvar2);
 
-        twvar3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        twvar3.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
         twvar3.setText("0");
         twvar3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "3 | AB", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.BELOW_TOP, new java.awt.Font("Lucida Console", 0, 24))); // NOI18N
         twvar3.addActionListener(new java.awt.event.ActionListener() {
@@ -543,49 +548,32 @@ public class MainFrame extends javax.swing.JFrame {
     private void fvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fvarActionPerformed
         changeJButtonText((JButton) evt.getSource());
     }//GEN-LAST:event_fvarActionPerformed
-
+    private int val[];
+    String soln = null;
     public void solveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solveActionPerformed
-        int val[];
-        String soln = null;
+        
+        // LISKOV
 
         if (twvarpanel.isShowing()) {
             // executes when two variable is selected
+      
             val = new int[4];
-
-            for (int i = 0; i < val.length; i++) {
-                // stores value from button text
-                if (twvar[i].getText().matches("X")) {
-                    val[i] = 2;
-                } else {
-                    val[i] = Integer.parseInt(twvar[i].getText());
-                }
-            }
-            kv.setN_Bits(2);
-            soln = kv.getMintermen_function().Initializare_doi(val).solve(kv.getN_Bits());
-        } else if (trvarpanel.isShowing()) {
+            doua_variabile(val);
+        } 
+        else if (trvarpanel.isShowing())
+        {
      
             val = new int[8];
-            kv.setN_Bits(3);
-            for (int i = 0; i < val.length; i++) {
-                if (trvar[i].getText().matches("X")) {
-                    val[i] = 2;
-                } else {
-                    val[i] = Integer.parseInt(trvar[i].getText());
-                }
-            }
-            soln = kv.getMintermen_function().Initializare_trei(val).solve(kv.getN_Bits());
-        } else {
+            
+           trei_variabile(val);
+        } else 
+        {
             val = new int[16];
-            kv.setN_Bits(4);
-            for (int i = 0; i < val.length; i++) {
-                if (fvar[i].getText().matches("X")) {
-                    val[i] = 2;
-                } else {
-                    val[i] = Integer.parseInt(fvar[i].getText());
-                }
-            }
-            soln = kv.getMintermen_function().Initializare_patru(val).solve();
+            
+            patru_variabile(val);
         }
+        
+    
 
         // sets the result to text pane
         if (soln.isEmpty()) {
@@ -604,17 +592,60 @@ public class MainFrame extends javax.swing.JFrame {
             switch (choice) {
                 case JOptionPane.OK_OPTION:
                     soln = new SoPtoPoSConverter().convert(soln);
-                    // displays result in PoS
+                    // displays result in Maxtermen
                     textpane.setText("Maxtermen = " + soln);
                     break;
                 case JOptionPane.NO_OPTION:
-                    // displays result in SoP
+                    // displays result in Mintermen
                     textpane.setText("Mintermen = " + soln);
                     break;
             }
         }
     }//GEN-LAST:event_solveActionPerformed
+    public void doua_variabile(int val[])
+    {
+    	val = new int[4];
 
+        for (int i = 0; i < val.length; i++) {
+            
+            if (twvar[i].getText().matches("X")) {
+                val[i] = 2;
+            } else {
+                val[i] = Integer.parseInt(twvar[i].getText());
+            }
+        }
+        kv.setN_Bits(2);
+        soln = kv.getMintermen_function().Initializare_doi(val).rezolvare_diagrama(kv.getN_Bits());
+    }
+    public void trei_variabile(int val[])
+    {
+    	val = new int[8];
+        kv.setN_Bits(3);
+        for (int i = 0; i < val.length; i++) {
+            if (trvar[i].getText().matches("X")) {
+                val[i] = 2;
+            } else {
+                val[i] = Integer.parseInt(trvar[i].getText());
+            }
+        }
+        soln = kv.getMintermen_function().Initializare_trei(val).rezolvare_diagrama(kv.getN_Bits());
+       
+        
+    }
+    public void patru_variabile(int val[])
+    {
+    	val = new int[16];
+        kv.setN_Bits(4);
+        for (int i = 0; i < val.length; i++) {
+            if (fvar[i].getText().matches("X")) {
+                val[i] = 2;
+            } else {
+                val[i] = Integer.parseInt(fvar[i].getText());
+            }
+        }
+        soln = kv.getMintermen_function().Initializare_patru(val).rezolvare_diagrama(kv.getN_Bits());
+        
+    }
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
         if (twvarpanel.isShowing()) {
             // resets two variable panel buttons

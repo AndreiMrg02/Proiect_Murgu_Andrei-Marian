@@ -321,3 +321,80 @@
 2022-05-22 14:42:28 INFO  Mintermen:78 - S-a accesat instanta Singleton din MINTERMEN
 2022-05-22 14:42:28 INFO  Maxtermen:26 - S-a accesat instanta Singleton din Maxtermen
 2022-05-25 01:24:01 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 16:17:05 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 16:23:09 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 16:27:28 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 16:31:12 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 16:34:16 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 16:39:50 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 16:50:25 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 16:50:33 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 16:53:26 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 16:58:59 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 17:23:58 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 17:29:39 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:03:33 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:06:36 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:06:44 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:07:23 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:08:34 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:14:21 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:18:45 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:23:58 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:24:31 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:24:53 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:26:04 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:26:35 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:26:56 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:27:41 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:28:39 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:28:47 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:30:26 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:32:34 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:32:48 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:33:07 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:33:15 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 18:43:35 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 19:06:25 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN
+2022-05-25 19:10:44 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:11:54 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:12:21 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:14:05 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:14:22 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:14:36 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:16:24 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:19:31 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:23:07 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:25:59 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:29:26 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:29:50 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:30:41 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:31:40 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:35:41 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:36:30 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:39:13 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:39:48 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:40:03 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:41:08 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:42:58 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:43:21 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:44:44 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:49:16 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:49:53 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 19:58:10 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 20:01:21 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 20:02:10 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 20:06:49 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 20:11:23 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 20:11:57 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 20:15:33 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 20:17:36 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 20:18:11 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 20:19:50 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 20:20:47 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 20:21:21 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 20:22:39 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 20:23:45 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 20:25:05 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 20:27:53 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN
+2022-05-25 20:28:56 INFO  MintermenMaxtermen:41 - S-a accesat instanta Singleton din MINTERMEN si MAXTERMEN

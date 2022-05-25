@@ -1,25 +1,15 @@
 [
 	  {
-        "n_Bits": 2,
-        "mintermen_function":
+        "value":
             {
-             "functie_mintermen":[0,3]
-            },
-        "maxtermen_function":
-            {
-               "functie_maxtermen":[0,3]
+             "val":[0,3]
             }
           
         },
         {
-        "n_Bits": 3,
-        "mintermen_function":
+        "value":
             {
-             "functie_mintermen":[0,1,4,7]
-            },
-            "maxtermen_function":
-            {
-               "functie_maxtermen":[0,1,4,7]
+             "val":[0,1,4,7]
             }
           
         }

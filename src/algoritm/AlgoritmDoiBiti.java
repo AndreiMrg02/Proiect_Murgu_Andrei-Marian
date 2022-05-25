@@ -1,17 +1,17 @@
 package algoritm;
 
-public class AlgoritmTwo implements Check2{
+public class AlgoritmDoiBiti implements Check2{
 
 	 private String sir_biti = "";
 	    private final int matrice[][] = new int[2][2];
 	    private final int verificare[][] = new int[2][2];
 	    
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	    public AlgoritmTwo() {
+	    public AlgoritmDoiBiti() {
 	    	super();
 	    }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	    public AlgoritmTwo(int[] val) {
+	    public AlgoritmDoiBiti(int[] val) {
 	        int count = 0;
 	        for (int i = 0; i < 2; i++) {
 	            for (int j = 0; j < 2; j++) {
@@ -21,17 +21,17 @@ public class AlgoritmTwo implements Check2{
 	        }
 	    }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	    public String solve(int n_bits) {
-	        if (!check4(n_bits)) {
-	            // reaches if all values are 1
+	    public String rezolvare_diagrama(int n_bits) {
+	        if (!verificare_patru_biti(n_bits)) {
+
 	            sir_biti = "1";
 	        } else {
-	            // reaches if smaller groups are to be found rather than 4
+	    
 	            for (int i = 0; i < n_bits; i++) {
 	                for (int j = 0; j < n_bits; j++) {
 	                    if (matrice[i][j] == 1 && verificare[i][j] == 0) {
-	                        if (check2(i, j,n_bits)) {
-	                            group_bits(i, j);
+	                        if (verificare_doi_biti(i, j,n_bits)) {
+	                            grup_biti(i, j);
 	                        }
 
 	                    }
@@ -41,69 +41,67 @@ public class AlgoritmTwo implements Check2{
 	        return sir_biti;
 	    }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	    // check for 4
-	    public boolean check4(int n_bits) {
-	        boolean search_smaller_group = true;
+
+	    public boolean verificare_patru_biti(int n_bits) {
+	        boolean cautare_grup = true;
 
 	        outer:
 	        for (int i = 0; i < n_bits; i++) {
 	            for (int j = 0; j < n_bits; j++) {
 	                if (matrice[i][j] == 1) {
-	                    search_smaller_group = false;
+	                    cautare_grup = false;
 	                } else {
-	                    // breaks outer loop and returns true to find smaller groups
-	                    search_smaller_group = true;
+	                    cautare_grup = true;
 	                    break outer;
 	                }
 	            }
 	        }
-	        return search_smaller_group;
+	        return cautare_grup;
 	    }
-	    // no grouping
 	   
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		@Override
-		public boolean check2(int row, int col,int n_bits) {
+		public boolean verificare_doi_biti(int lin, int col,int n_bits) {
 			String local = "";
-			boolean search_smaller_group = true;
-	        if (matrice[row][col] == 1 && matrice[row][(col + 1) % n_bits] == 1) { // columns ++
-	            if (row == 0) {
+			boolean cautare_grup = true;
+	        if (matrice[lin][col] == 1 && matrice[lin][(col + 1) % n_bits] == 1) { // columns ++
+	            if (lin == 0) {
 	                local = "A'";
 	            }
-	            if (row == 1) {
+	            if (lin == 1) {
 	                local = "A";
 	            }
 
-	            matches( local);
+	            creare_sir_biti( local);
 
-	            search_smaller_group = false;
-	            // make checked
-	            verificare[row][col] = 1;
-	            verificare[row][(col + 1) % n_bits] = 1;
-	        } else if (matrice[row][col] == 1 && matrice[(row + 1) % n_bits][col] == 1) { // rows ++
+	            cautare_grup = false;
+	       
+	            verificare[lin][col] = 1;
+	            verificare[lin][(col + 1) % n_bits] = 1;
+	        } else if (matrice[lin][col] == 1 && matrice[(lin + 1) % n_bits][col] == 1) { // rows ++
 	            if (col == 0) {
 	                local = "B'";
 	            }
 	            if (col == 1) {
 	                local = "B";
 	            }
-	            matches( local);
-	            search_smaller_group = false;
-	            // make checked
-	            verificare[row][col] = 1;
-	            verificare[(row + 1) % n_bits][col] = 1;
+	            creare_sir_biti( local);
+	            cautare_grup = false;
+	  
+	            verificare[lin][col] = 1;
+	            verificare[(lin + 1) % n_bits][col] = 1;
 	        }
-			return search_smaller_group;
+			return cautare_grup;
 		}
 		
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		 public void group_bits(int row, int col) {
+		 public void grup_biti(int lin, int col) {
 		        String local = "";
 
-		        if (row == 0) {
+		        if (lin == 0) {
 		            local = "A'";
 		        }
-		        if (row == 1) {
+		        if (lin == 1) {
 		            local = "A";
 		        }
 		        if (col == 0) {
@@ -113,13 +111,13 @@ public class AlgoritmTwo implements Check2{
 		            local = local + "B";
 		        }
 
-		        matches( local);
+		        creare_sir_biti( local);
 
-		        verificare[row][col] = 1;
+		        verificare[lin][col] = 1;
 		    }
 		 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		    public void matches(String local)
+		    public void creare_sir_biti(String local)
 		    {
 		    	 if (sir_biti.matches("")) {
 		             sir_biti = sir_biti + local;
