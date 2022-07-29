@@ -1,6 +1,5 @@
 # Proiect_Murgu_Andrei-Marian
 
-NUMARUL 13
 
   Editor pentru sisteme de funcții booleene incomplet specificate.
   Sa se implementeze un editor pentru sisteme de funcții booleene incomplet specificate. 
